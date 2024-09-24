@@ -57,3 +57,34 @@
 .search-container{
     height: 2%;
 }
+
+.shimmer-card{
+    margin: 1% 0%;
+    min-height: 22rem;
+    min-width: 21%;
+    
+}
+.shimmer-img-container{
+    height: 40%;
+    width: 100%;
+    border-radius: 8px;
+    background-color: gray
+}
+.shimmer-info-container{
+    height: 40%;
+    background-color: lightgray;    
+}
+.shimmer-info-container>h3{
+    background-color: gray
+}
+.shimmer-info-container>p{
+    background-color: gray
+}
+.logo-container{
+    height: auto;
+    width: 20%;
+}
+.logo-container>img{
+    height: 100%;
+    width: 100%;
+}
