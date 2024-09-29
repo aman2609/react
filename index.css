@@ -1,90 +1,247 @@
-.header{
-    height:10%;
-    display :flex;
+.header {
+    height: 10%;
+    display: flex;
     margin: 0% 12% 2% 12%;
     justify-content: space-between;
     border: 1px solid black;
 }
-.logo{
+
+.logo {
     width: 10px
 }
 
-.nav-items>ul{
+.nav-items>ul {
     display: flex;
     list-style-type: none;
 }
-.nav-items>ul>li{
+
+.nav-items>ul>li {
     padding: 10px 30px;
 }
-.Body{
+
+.Body {
     margin: 0% 12%;
 }
-.restaurant-list{
+
+.restaurant-list {
     padding: 1.2%;
     border: 1px solid black;
-    
+
     height: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     /* align-items: center; */
 }
-.card{
+
+.card {
     border: 1px solid black;
-    width:20%;
+    width: 23%;
     height: 22rem;
     margin: 1% 0%;
-    
+
 }
-.img-container{
+
+.img-container {
     height: 40%;
     width: 100%;
 }
-.img-container>img{
+
+.img-container>img {
     height: 100%;
     width: 100%;
     border-radius: 8px;
     /* height: 100%; */
     object-fit: cover;
 }
-.info-container{
+
+.info-container {
     height: 40%;
 }
-.Footer{
+
+.Footer {
     height: 10%;
 }
 
-.search-container{
+.search-container {
     height: 2%;
 }
 
-.shimmer-card{
+.shimmer-card {
     margin: 1% 0%;
     min-height: 22rem;
-    min-width: 21%;
-    
+    min-width: 23%;
+
 }
-.shimmer-img-container{
+
+.shimmer-img-container {
     height: 40%;
     width: 100%;
     border-radius: 8px;
     background-color: gray
 }
-.shimmer-info-container{
+
+.shimmer-info-container {
     height: 40%;
-    background-color: lightgray;    
+    background-color: lightgray;
 }
-.shimmer-info-container>h3{
+
+.shimmer-info-container>h3 {
     background-color: gray
 }
-.shimmer-info-container>p{
+
+.shimmer-info-container>p {
     background-color: gray
 }
-.logo-container{
+
+.logo-container {
     height: auto;
-    width: 20%;
+    width: 10%;
 }
-.logo-container>img{
+
+.logo-container>a>img {
     height: 100%;
     width: 100%;
+}
+
+.about-us {
+    margin: 0% 12%;
+    /* padding: 1% 5%; */
+}
+
+.about-us>p {
+    font-size: larger;
+}
+
+.about-us>ul>li {
+    font-size: larger;
+}
+
+.error-container {
+    margin: 0% 12%;
+}
+a {
+    all: unset;
+}
+
+
+.error-container>h1 {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 1%;
+}
+
+.error-container>h2 {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 1%;
+}
+
+.restaurant-container {
+    z-index: 0;
+    margin: 0% 25%;
+    padding: 1%;
+}
+
+.delivery-container {
+    /* border: 1px solid gray ; */
+    border-radius: 1.2rem;
+    padding: 1.5%;
+    margin-bottom: 6%;
+    z-index: 1;
+    background-color: #f8f5f5;
+    box-shadow: 5px 5px 5px gray
+}
+
+.restaurant-container>h1 {
+    text-align: center;
+}
+
+.delivery-container>h4 {
+    margin: 1.2% 0%;
+    font-size: medium;
+}
+
+.delivery-container>p {
+    margin: 1.2% 0%;
+    font-size: medium;
+}
+
+/* .menu-container{
+    margin: 1% 20%;
+} */
+.menu-item-container {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 0% 1.5%;
+    max-height: 12%;
+    display: flex;
+    margin-bottom: 2%;
+    border: 1px solid gray;
+    z-index: 2;
+    box-shadow: 5px 5px 5px rgb(192, 187, 187)
+}
+
+.menu-item-info {
+    width: 85%;
+}
+
+.menu-item-image {
+    width: 15%;
+    position: relative;
+}
+
+.menu-item-image>img {
+    width: 100%;
+    height: 100%;
+}
+
+.menu-container {
+    border-radius: 1rem;
+    /* border: 1px solid gray; */
+    padding: 1% 2%;
+    margin-bottom: 3%;
+    z-index: 1;
+    background-color: #f8f5f5;
+    box-shadow: 5px 5px 5px gray
+}
+
+.add-button {
+    background-color: white;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    opacity: 0.4;
+    color: black;
+    font-weight: 800;
+    border: none;
+
+    /* pointer-events: none; */
+}
+
+.add-button:hover {
+    background-color: white;
+    opacity: 0.5;
+    color: black;
+}
+
+.all-menu-container {
+    /* background-color: #f8f5f5; */
+}
+
+.no-image {
+    border: 1px solid black;
+    border-radius: 2%;
+    background-color: lightgray;
+    color: black;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    /* pointer-events: none; */
+}
+.no-image:hover {
+    background-color: darkgray;
 }

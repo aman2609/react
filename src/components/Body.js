@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { restaurantList } from "./constants";
@@ -15,6 +16,8 @@ const Body = () => {
 
   useEffect(() => {
     fetchRestaurants();
+    console.log(allRestaurants);
+    
   }, []);
 
   async function fetchRestaurants() {
@@ -63,7 +66,9 @@ const Body = () => {
             <h1>No Matching Restaurant Found</h1>
           ) : (
             filteredRestaurants.map((restaurant, index) => {
-              return <RestaurantCard {...restaurant.info} key={index} />;
+              return (            
+                <RestaurantCard {...restaurant.info} key={index} />
+              )
             })
           )
         ) : (
