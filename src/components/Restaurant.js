@@ -2,45 +2,29 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import MenuCard from "./MenuCard";
 import Shimmer from "./Shimmer";
+import useRestaurant from "../utils/useRestaurant";
 
 
-function findMenu(restaurant){
-    const menuDetail = restaurant.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards.filter((menu)=>{
-        return menu.card.card['@type'] == 'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
-    })
-    return menuDetail;
-}
-
-const Restaurant = () => {
-    const [restaurant, setRestaurant] = useState(null)
-    const [menu, setMenu] = useState(null)
+const  Restaurant = () => {
+    // const [restaurant, setRestaurant] = useState(null)
+    // const [menu, setMenu] = useState(null)
     const {id} = useParams();
-    useEffect(() => {
-        findRestaurantInfo(id)
-    },[])
-    console.log(menu);
+    const [restaurant, menu ] = useRestaurant(id)
     
-
-    async function findRestaurantInfo(id){
-        const restaurantInfo = await fetch('https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId='+id+'&catalog_qa=undefined&submitAction=ENTER')
-        const json = await restaurantInfo.json();
-        setRestaurant(json)
-        setMenu(findMenu(json))
-    }
     
     
 
     return (!restaurant?<><Shimmer/></>:
-      <div className="restaurant-container">
-        <h1>{restaurant?.data?.cards[2]?.card?.card?.info?.name}</h1>
-        <div className="delivery-container">
-          <h4>&#x2B50; {restaurant?.data?.cards[2]?.card?.card?.info?.avgRating} ({restaurant?.data?.cards[2]?.card?.card?.info?.totalRatingsString}) • {restaurant?.data?.cards[2]?.card?.card?.info?.costForTwoMessage}</h4>
-          <h4>{restaurant?.data?.cards[2]?.card?.card?.info?.cuisines?.join(' , ')}</h4>
-          <p><b>Outlet</b> {restaurant?.data?.cards[2]?.card?.card?.info?.areaName}</p>
-          <p>{restaurant?.data?.cards[2]?.card?.card?.info?.sla?.slaString}</p>
-          <p><b>{restaurant?.data?.cards[2]?.card?.card?.info?.sla?.lastMileTravelString}</b> | &#8377; {restaurant?.data?.cards[2]?.card?.card?.info?.feeDetails.totalFee/100} Delivery fee will apply</p>
+      <div className="restaurant-container z-0 ma mx-[25%] my-0 p-[1%]">
+        <h1 className='text-center text-5xl'>{restaurant?.data?.cards[2]?.card?.card?.info?.name}</h1>
+        <div className="delivery-container text-center rounded-lg p-[1.5%] my-[3%] z-10 bg-stone-100 shadow-lg">
+          <h4 className='my-[1.2%] mx-0 text-base font-medium'>&#x2B50; {restaurant?.data?.cards[2]?.card?.card?.info?.avgRating} ({restaurant?.data?.cards[2]?.card?.card?.info?.totalRatingsString}) • {restaurant?.data?.cards[2]?.card?.card?.info?.costForTwoMessage}</h4>
+          <h4 className='my-[1.2%] mx-0 text-base font-medium'>{restaurant?.data?.cards[2]?.card?.card?.info?.cuisines?.join(' , ')}</h4>
+          <p className='my-[1.2%] mx-0 text-sm'><b>Outlet</b> {restaurant?.data?.cards[2]?.card?.card?.info?.areaName}</p>
+          <p className='my-[1.2%] mx-0 text-sm'>{restaurant?.data?.cards[2]?.card?.card?.info?.sla?.slaString}</p>
+          <p className='my-[1.2%] mx-0 text-sm'><b>{restaurant?.data?.cards[2]?.card?.card?.info?.sla?.lastMileTravelString}</b> | &#8377; {restaurant?.data?.cards[2]?.card?.card?.info?.feeDetails?.totalFee/100} Delivery fee will apply</p>
         </div>
-        <h1>Menu</h1>
+        <h1 className='text-4xl text-center mb-5'>Menu</h1>
         <div className="all-menu-container">
             {menu.map((menuItem,index)=>{
                 return <MenuCard key={index}  {...menuItem}/>

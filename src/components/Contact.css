@@ -1,5 +1,5 @@
 .contact-us {
-    max-width: 600px;
+    max-width: 900px;
     margin: 2% auto;
     padding: 1% 2% 3% 2%;
     background-color: #f9f9f9;
@@ -7,7 +7,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
-  .contact-us h2 {
+  .contact-us h1 {
     text-align: center;
     margin-bottom: 20px;
     color: #333;
@@ -34,7 +34,7 @@
   
   .form-group textarea {
     resize: vertical;
-    height: 100px;
+    height: 200px;
   }
   
   .submit-query {

@@ -1,16 +1,16 @@
 const About = () => {
     return (
-      <div className="about-us">
-        <h2>About Us</h2>
-        <p>
+      <div className="about-us mx-[13%]">
+        <h2 className='text-3xl text-center my-4'>About Us</h2>
+        <p className='text-lg'>
           Welcome to Tasty Trek, your ultimate destination for a delightful
           culinary journey! At Tasty Trek, we believe that food is not just
           about sustenance but an experience that brings joy, comfort, and a
           sense of adventure. Our mission is to connect food lovers with the
           most delicious and diverse culinary delights, right at their doorstep.
         </p>
-        <h2>Our Story</h2>
-        <p>
+        <h2 className='text-3xl text-center my-4'>Our Story</h2>
+        <p className='text-lg'>
           Tasty Trek was born out of a passion for food and a desire to make
           gourmet experiences accessible to everyone. Our founders, avid food
           enthusiasts themselves, recognized the need for a platform that could
@@ -20,8 +20,8 @@ const About = () => {
           for our customers.{" "}
         </p>
 
-        <h2>What We Offer</h2>
-        <ul>
+        <h2 className='text-3xl text-center my-4'>What We Offer</h2>
+        <ul className='text-lg'>
           <li>
             <b>Wide Variety of Cuisines</b>: Whether you’re craving traditional Indian
             dishes, exotic Asian flavors, or classic Western comfort food, Tasty
@@ -53,8 +53,8 @@ const About = () => {
             promotions and enjoy your favorite meals at unbeatable prices.
           </li>
         </ul>
-        <h2>Our Commitment</h2>
-        <p>
+        <h2 className='text-3xl text-center my-4'>Our Commitment</h2>
+        <p className='text-lg'>
           At Tasty Trek, we are committed to providing an exceptional food
           delivery experience that goes beyond just delivering meals. We strive
           to create a community of food lovers who can explore, share, and
@@ -62,12 +62,12 @@ const About = () => {
           always here to assist you and ensure that your Tasty Trek experience
           is nothing short of perfect.
         </p>
-        <p>
+        <p className='text-lg'>
           Join us on this delicious journey and let Tasty Trek be your trusted
           companion in discovering the best culinary treasures around you. Bon
           appétit!
         </p>
-        <p>
+        <p className='text-lg'>
           Feel free to customize this to better fit your brand’s voice and
           specific offerings! If you need any more details or adjustments, just
           let me know.

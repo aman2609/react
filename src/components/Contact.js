@@ -23,10 +23,10 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-us">
-      <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
+    <div className="contact-us h-[80%]">
+      <h1 className='text-5xl'>Contact Us</h1>
+      <form onSubmit={handleSubmit} className='h-[100%]'>
+        <div className="form-group text-2xl">
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -37,7 +37,7 @@ const Contact = () => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className="form-group text-2xl">
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -48,7 +48,7 @@ const Contact = () => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className="form-group text-2xl">
           <label htmlFor="message">Message</label>
           <textarea
             id="message"
@@ -58,7 +58,7 @@ const Contact = () => {
             required
           ></textarea>
         </div>
-        <button className="submit-query" type="submit">Submit</button>
+        <button className="submit-query text-2xl" type="submit">Submit</button>
       </form>
     </div>
   );

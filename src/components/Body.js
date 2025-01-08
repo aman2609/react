@@ -3,11 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { restaurantList } from "./constants";
 import { useEffect, useState } from "react";
-function filterRestaurant(restaurantList, searchText) {
-  return restaurantList.filter((restaurant) =>
-    restaurant.info.name.toLowerCase().includes(searchText.toLowerCase())
-  );
-}
+import { filterRestaurant } from "../utils/helper";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
@@ -26,9 +22,7 @@ const Body = () => {
     );
 
     const json = await data.json();
-    console.log(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
-    );
+    
     setAllRestaurants(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -38,9 +32,10 @@ const Body = () => {
   }
 
   return (
-    <div className="Body">
-      <div className="search-container">
+    <div className="Body mx-[12%] my-0">
+      <div className="search-container h-[2%] w-[30%] mx-auto my-4 ">
         <input
+        className='w-[70%] border border-black rounded-md px-2 py-1 mr-1'
           type="text"
           placeholder="Search..."
           value={searchText}
@@ -51,7 +46,7 @@ const Body = () => {
           }}
         />
         <button
-          className="search-btn"
+          className="search-btn w-[28%] border py-1 border-black rounded-md hover:bg-slate-200"
           onClick={() => {
             const data = filterRestaurant(allRestaurants, searchText);
             setFilteredRestaurants(data);
@@ -60,12 +55,12 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="restaurant-list">
-        {allRestaurants.length != 0 ? (
-          filteredRestaurants.length == 0 ? (
+      <div className="restaurant-list p-[1.2%] border border-black h-[80%] flex flex-wrap justify-between">
+        {allRestaurants?.length != 0 ? (
+          filteredRestaurants?.length == 0 ? (
             <h1>No Matching Restaurant Found</h1>
           ) : (
-            filteredRestaurants.map((restaurant, index) => {
+            filteredRestaurants?.map((restaurant, index) => {
               return (            
                 <RestaurantCard {...restaurant.info} key={index} />
               )
